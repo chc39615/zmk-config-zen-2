@@ -43,7 +43,6 @@
         };
     };
 
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -57,29 +56,12 @@
             //                  |<NUMBER>|  SPC  | DEL |   | BSP | ENT   |<SYMBOL>|
 
             bindings = <
-&kp CAPS    &kp Q  &kp W  &kp F            &kp P             &kp G          &kp J        &kp L             &kp U            &kp Y    &kp SEMI  &kp ESC
-&kp TAB     &kp A  &kp R  &rpi LALT S      &rpi LCTRL T      &kp D          &kp H        &rpi RCTRL N      &rpi RALT E      &kp I    &kp O     &kp SQT
-&kp LSHIFT  &kp Z  &kp X  &kp C            &rpi LGUI V       &kp B          &kp K        &rpi RGUI M       &kp COMMA        &kp DOT  &kp FSLH  &kp RSHIFT
-                          &mo NUMBER       &kp SPACE         &kp DEL        &kp BSPC     &kp ENT           &mo SYMBOL
+                &kp CAPS    &kp Q  &kp W  &kp F            &kp P             &kp G          &kp J        &kp L             &kp U            &kp Y    &kp SEMI  &kp ESC
+                &kp TAB     &kp A  &kp R  &rpi LALT S      &rpi LCTRL T      &kp D          &kp H        &rpi RCTRL N      &rpi RALT E      &kp I    &kp O     &kp SQT
+                &kp LSHIFT  &kp Z  &kp X  &kp C            &rpi LGUI V       &kp B          &kp K        &rpi RGUI M       &kp COMMA        &kp DOT  &kp FSLH  &kp RSHIFT
+                                      &mo NUMBER          &kp SPACE         &kp DEL        &kp BSPC     &kp ENT           &mo SYMBOL
             >;
         };
-
-//        qwerty_layer {
-//            display-name = "QWERTY";
-//
-//            // --------------------------------------------------------------------------------
-//            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-//            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-//            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-//
-//            bindings = <
-//&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T          &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-//&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G          &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-//&td0       &kp Z  &kp X  &kp C     &kp V  &kp B          &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-//                         &kp LGUI  &mo 1  &lt 3 SPACE    &lt 3 ENTER  &mo 2  &kp RALT
-//            >;
-//        };
 
         NUMBER_layer {
             display-name = "NUMBER";
@@ -91,10 +73,10 @@
             //                    | GUI |     | SPC |    | BSP | ENT |<FUNC>|
 
             bindings = <
-&trans  &kp N1       &kp N2       &kp N3           &kp N4            &kp N5       &kp N6         &kp N7        &kp N8  &kp N9   &kp N0    &trans
-&trans  &kp MINUS    &kp EQUAL    &rpi LALT LBKT   &rpi LCTRL RBKT   &kp BSLH     &rpi RCTRL F1  &rpi RALT F2  &kp F3  &kp F4   &kp F5    &kp F6
-&trans  &none        &none        &kp ESC          &kp LGUI          &kp GRAVE    &kp F7         &kp F8        &kp F9  &kp F10  &kp F11   &kp F12
-                     &trans       &kp SPACE        &kp DEL           &kp BKSP     &kp ENT        &mo FUNC
+                &trans  &kp N1       &kp N2       &kp N3           &kp N4            &kp N5       &kp N6         &kp N7        &kp N8  &kp N9   &kp N0    &trans
+                &trans  &kp MINUS    &kp EQUAL    &rpi LALT LBKT   &rpi LCTRL RBKT   &kp BSLH     &rpi RCTRL F1  &rpi RALT F2  &kp F3  &kp F4   &kp F5    &kp F6
+                &trans  &none        &none        &kp ESC          &kp LGUI          &kp GRAVE    &kp F7         &kp F8        &kp F9  &kp F10  &kp F11   &kp F12
+                              &trans       &kp SPACE        &kp DEL           &kp BKSP     &kp ENT        &mo FUNC
             >;
         };
 
@@ -108,9 +90,9 @@
             //                   |<FUNC>| SPC | DEL |   | BSP | ENT |<SYMBOL>|
 
             bindings = <
-&kp CAPS    &kp EXCL    &kp AT     &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp ESC
-&kp TAB     &kp UNDER   &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE     &kp PG_UP   &kp HOME  &kp UP     &kp END   &kp PSCRN &none 
-&kp LSHIFT  &none       &none      &kp ESC   &kp LGUI  &kp TILDE    &kp PG_DN   &kp LEFT  &kp DOWN   &kp RIGHT &none     &kp RSHIFT
+                &kp CAPS    &kp EXCL    &kp AT     &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp ESC
+                &kp TAB     &kp UNDER   &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE     &kp PG_UP   &kp HOME  &kp UP     &kp END   &kp PSCRN &none 
+                &kp LSHIFT  &none       &none      &kp ESC   &kp LGUI  &kp TILDE    &kp PG_DN   &kp LEFT  &kp DOWN   &kp RIGHT &none     &kp RSHIFT
                                    &mo FUNC  &kp SPACE &kp DEL      &kp BKSP    &kp ENT   &trans
             >;
         };
@@ -118,10 +100,10 @@
         FUNC_layer {
             display-name = "FUNC";
             bindings = <
-&none  &none        &none         &none       &none    &none       &none  &none  &none  &none  &none &none 
-&none  &none        &none         &none       &none    &none       &none  &none  &none  &none  &none &none
-&none  &kp K_VOL_DN &kp K_VOL_UP  &kp K_MUTE  &none    &none       &none  &none  &none  &none  &none &none 
-                    &trans        &none       &none                &none  &none  &trans
+                &none  &none        &none         &none       &none    &none       &none  &none  &none  &none  &none &none 
+                &none  &none        &none         &none       &none    &none       &none  &none  &none  &none  &none &none
+                &none  &kp K_VOL_DN &kp K_VOL_UP  &kp K_MUTE  &none    &none       &none  &none  &none  &none  &none &none 
+                            &trans        &none       &none                &none  &none  &trans
             >;
         };
     };
