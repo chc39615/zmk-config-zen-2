@@ -54,7 +54,8 @@
                 &kp CAPS    &kp Q  &kp W  &kp F            &kp P             &kp G          &kp J        &kp L             &kp U            &kp Y    &kp SEMI  &kp ESC
                 &kp TAB     &kp A  &kp R  &rpi LALT S      &rpi LCTRL T      &kp D          &kp H        &rpi RCTRL N      &rpi RALT E      &kp I    &kp O     &kp SQT
                 &kp LSHIFT  &kp Z  &kp X  &kp C            &rpi LGUI V       &kp B          &kp K        &rpi RGUI M       &kp COMMA        &kp DOT  &kp FSLH  &kp RSHIFT
-                                      &mo 1          &kp SPACE         &kp DEL        &kp BSPC     &kp ENT           &mo 2
+                         &mo 1     &kp SPACE             &kp DEL      &kp BSPC     &kp ENT  &mo 2
+                       //&kp LGUI  &mo 1  &lt 3 SPACE    &lt 3 ENTER  &mo 2  &kp RALT
             >;
         };
 
