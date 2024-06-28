@@ -26,6 +26,12 @@
 
 / {
     behaviors {
+        td0: td0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD0";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        };
         rpi: require_prior_idle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -51,8 +57,8 @@
 
             bindings = <
                 &kp CAPS    &kp Q  &kp W  &kp F            &kp P             &kp G          &kp J        &kp L             &kp U            &kp Y    &kp SEMI  &kp ESC
-                &kp TAB     &kp A  &kp R  &rpi LALT S      &rpi LCTRL T      &kp D          &kp H        &rpi RCTRL N      &rpi RALT E      &kp I    &kp O     &kp SQT
-                &kp LSHIFT  &kp Z  &kp X  &kp C            &rpi LGUI V       &kp B          &kp K        &rpi RGUI M       &kp COMMA        &kp DOT  &kp FSLH  &kp RSHIFT
+                &kp TAB     &kp A  &kp R  $mt LALT S      $mt LCTRL T      &kp D          &kp H        $mt RCTRL N      $mt RALT E      &kp I    &kp O     &kp SQT
+                &kp LSHIFT  &kp Z  &kp X  &kp C            $mt LGUI V       &kp B          &kp K        $mt RGUI M       &kp COMMA        &kp DOT  &kp FSLH  &kp RSHIFT
                                       &mo NUMBER          &kp SPACE         &kp DEL        &kp BSPC     &kp ENT           &mo SYMBOL
             >;
         };
@@ -68,7 +74,7 @@
 
             bindings = <
                 &trans  &kp N1       &kp N2       &kp N3           &kp N4            &kp N5       &kp N6         &kp N7        &kp N8  &kp N9   &kp N0    &trans
-                &trans  &kp MINUS    &kp EQUAL    &rpi LALT LBKT   &rpi LCTRL RBKT   &kp BSLH     &rpi RCTRL F1  &rpi RALT F2  &kp F3  &kp F4   &kp F5    &kp F6
+                &trans  &kp MINUS    &kp EQUAL    $mt LALT LBKT   $mt LCTRL RBKT   &kp BSLH     $mt RCTRL F1  $mt RALT F2  &kp F3  &kp F4   &kp F5    &kp F6
                 &trans  &none        &none        &kp ESC          &kp LGUI          &kp GRAVE    &kp F7         &kp F8        &kp F9  &kp F10  &kp F11   &kp F12
                               &trans       &kp SPACE        &kp DEL           &kp BKSP     &kp ENT        &mo FUNC
             >;
