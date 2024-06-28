@@ -81,7 +81,7 @@
 //            >;
 //        };
 
-        number_layer {
+        NUMBER_layer {
             display-name = "NUMBER";
 
             // -----------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@
             >;
         };
 
-        symbol_layer {
+        SYMBOL_layer {
             display-name = "SYMBOL";
 
             // -----------------------------------------------------------------------------------------
@@ -115,7 +115,7 @@
             >;
         };
 
-        func_layer {
+        FUNC_layer {
             display-name = "FUNC";
             bindings = <
 &none  &none        &none         &none       &none    &none       &none  &none  &none  &none  &none &none 
