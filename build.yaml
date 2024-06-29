@@ -1,4 +1,4 @@
 include:
-  - board: corneish_zen_v2_left
-  - board: corneish_zen_v2_right
-  - board: corneish_zen_v2_reset
+  # - board: corneish_zen_v2_left
+  # - board: corneish_zen_v2_right
+  - board: corneish_zen_v2_settings_reset
