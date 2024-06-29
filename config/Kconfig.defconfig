@@ -85,3 +85,6 @@ config BQ274XX
     default y
 
 endif # BOARD_CORNEISH_ZEN_V1_LEFT || BOARD_CORNEISH_ZEN_V1_RIGHT
+
+config BT_CTLR_TX_PWR_MINUS_8
+    default y
