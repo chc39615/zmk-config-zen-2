@@ -6,7 +6,7 @@
 if BOARD_CORNEISH_ZEN_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "Corne-ish Zen"
+    default "Corne-ish Zen test"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
