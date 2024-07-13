@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 #
 
-if BOARD_CORNEISH_ZEN_RIGHT
+if BOARD_CORNEISH_ZEN_LEFT
 
 config ZMK_KEYBOARD_NAME
     default "Corne-ish Zen test"
@@ -11,7 +11,7 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-endif # BOARD_CORNEISH_ZEN_RIGHT
+endif # BOARD_CORNEISH_ZEN_LEFT
 
 
 if BOARD_CORNEISH_ZEN_LEFT || BOARD_CORNEISH_ZEN_RIGHT
