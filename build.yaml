@@ -1,5 +1,9 @@
+# Builds the corne_epd shield on a nice!nano-compatible controller, ZMK v0.3.
+---
 include:
-  - board: corneish_zen_v2_left
-  - board: corneish_zen_v2_right
+  - board: nice_nano_v2
+    shield: corne_epd_left
+  - board: nice_nano_v2
+    shield: corne_epd_right
   - board: nice_nano_v2
     shield: settings_reset

@@ -15,7 +15,7 @@
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 LV_IMG_DECLARE(zenlogo);
- LV_IMG_DECLARE(layers2);
+LV_IMG_DECLARE(layers2);
 
 #if IS_ENABLED(CONFIG_CUSTOM_WIDGET_BATTERY_STATUS)
 static struct zmk_widget_battery_status battery_status_widget;
@@ -54,25 +54,24 @@ lv_obj_t *zmk_display_status_screen() {
                  41);
 #endif
 
-  #if IS_ENABLED(CONFIG_CUSTOM_WIDGET_LAYER_STATUS)
-   lv_obj_t *LayersHeading;
-   LayersHeading = lv_img_create(screen);
+#if IS_ENABLED(CONFIG_CUSTOM_WIDGET_LAYER_STATUS)
+    lv_obj_t *LayersHeading;
+    LayersHeading = lv_img_create(screen);
     lv_obj_align(LayersHeading, LV_ALIGN_BOTTOM_MID, 0, -30);
     lv_img_set_src(LayersHeading, &layers2);
 
     zmk_widget_layer_status_init(&layer_status_widget, screen);
-   lv_obj_set_style_text_font(zmk_widget_layer_status_obj(&layer_status_widget),
+    lv_obj_set_style_text_font(zmk_widget_layer_status_obj(&layer_status_widget),
                                &lv_font_montserrat_16, LV_PART_MAIN);
-   lv_obj_align(zmk_widget_layer_status_obj(&layer_status_widget), LV_ALIGN_BOTTOM_MID, 0, -5);
-  #endif                                   
- 
+    lv_obj_align(zmk_widget_layer_status_obj(&layer_status_widget), LV_ALIGN_BOTTOM_MID, 0, -5);
+#endif
 
- #if !IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
-  lv_obj_t *zenlogo_icon;
-   zenlogo_icon = lv_img_create(screen);
-  lv_img_set_src(zenlogo_icon, &zenlogo);
-   lv_obj_align(zenlogo_icon, LV_ALIGN_BOTTOM_MID, 0, -5);
-   #endif    
+#if !IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+    lv_obj_t *zenlogo_icon;
+    zenlogo_icon = lv_img_create(screen);
+    lv_img_set_src(zenlogo_icon, &zenlogo);
+    lv_obj_align(zenlogo_icon, LV_ALIGN_BOTTOM_MID, 0, -5);
+#endif
 
     return screen;
 }

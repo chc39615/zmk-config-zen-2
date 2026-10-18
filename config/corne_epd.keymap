@@ -12,9 +12,9 @@
 
 / {
     chosen {
-        zmk,matrix_transform = &default_transform;
-
-        // zmk,matrix_transform = &five_column_transform;
+        // The board's physical layout picks the transform (6-column by default).
+        // For the 5-column layout use instead:
+        // zmk,physical-layout = &foostan_corne_5col_layout;
     };
 };
 
@@ -105,9 +105,15 @@
 
         func_layer {
             display-name = "FUNC";
+
+            // -----------------------------------------------------------------------------------------------
+            // | GAME | RGB on/off | effect+ | hue+ | sat+ | bright+ |   | BT0 | BT1 | BT2 | BT3 | BT4 |       |
+            // |      |            | effect- | hue- | sat- | bright- |   |     |     |     |     |     |BT CLR |
+            // |      |   VOL-     |  VOL+   | MUTE |      |         |   |     |     |     |     |     |       |
+
             bindings = <
-&tog 4  &none         &none         &none       &none  &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans 
-&none   &none         &none         &none       &none  &none    &none         &none         &none         &none         &none         &bt BT_CLR
+&tog 4  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
+&none   &none            &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD    &none         &none         &none         &none         &none         &bt BT_CLR
 &none   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &none  &none    &none         &none         &none         &none         &none         &none
                                     &trans      &none  &none    &none         &none         &trans
             >;

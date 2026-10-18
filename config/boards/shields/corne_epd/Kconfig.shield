@@ -1,0 +1,9 @@
+# corne_epd: Corne 3x6 keyboard PCB with a 1.02" IL0323 e-paper and WS2812
+# underglow, used with a nice!nano-compatible controller (board: nice_nano_v2).
+# SPDX-License-Identifier: MIT
+
+config SHIELD_CORNE_EPD_LEFT
+    def_bool $(shields_list_contains,corne_epd_left)
+
+config SHIELD_CORNE_EPD_RIGHT
+    def_bool $(shields_list_contains,corne_epd_right)

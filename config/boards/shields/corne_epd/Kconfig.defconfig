@@ -1,0 +1,109 @@
+# SPDX-License-Identifier: MIT
+
+if SHIELD_CORNE_EPD_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Corne-ish Zen"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_CORNE_EPD_LEFT
+
+if SHIELD_CORNE_EPD_LEFT || SHIELD_CORNE_EPD_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_DISPLAY
+    default y
+
+config ZMK_DISPLAY
+    select LV_USE_CONT
+    select LV_FONT_MONTSERRAT_26
+    select LV_FONT_MONTSERRAT_16
+    select LV_USE_LABEL
+    select LV_USE_IMG
+
+if ZMK_DISPLAY
+
+config SPI
+    default y
+
+config IL0323
+    default y
+
+config ZMK_DISPLAY_BLANK_ON_IDLE
+    default n
+
+# Needed for the IL0323 driver which allocs memory to clear the display
+config HEAP_MEM_POOL_SIZE
+    default 1024
+
+config LV_Z_MEM_POOL_SIZE
+    default 4096
+
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+endchoice
+
+choice ZMK_DISPLAY_STATUS_SCREEN
+    default ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+endchoice
+
+config CUSTOM_WIDGET_BATTERY_STATUS
+    default y
+
+# Left (central): output and layer widgets. Right (peripheral): its own
+# connection widget and the logo.
+config CUSTOM_WIDGET_OUTPUT_STATUS
+    default y if ZMK_SPLIT_ROLE_CENTRAL
+
+config CUSTOM_WIDGET_LAYER_STATUS
+    default y if ZMK_SPLIT_ROLE_CENTRAL
+
+config CUSTOM_WIDGET_PERIPHERAL_STATUS
+    default y if !ZMK_SPLIT_ROLE_CENTRAL
+
+endif # ZMK_DISPLAY
+
+if LVGL
+
+config LV_Z_BITS_PER_PIXEL
+    default 1
+
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1
+endchoice
+
+config LV_DPI_DEF
+    default 145
+
+config LV_Z_VDB_SIZE
+    default 100
+
+config LV_USE_THEME_MONO
+    default y
+
+config LV_COLOR_CHROMA_KEY_HEX
+    default 0x00FF00
+
+choice LV_FONT_DEFAULT
+    default LV_FONT_DEFAULT_MONTSERRAT_26
+endchoice
+
+endif # LVGL
+
+menuconfig CUSTOM_WIDGET_BATTERY_STATUS
+    bool "custom battery status widget"
+
+menuconfig CUSTOM_WIDGET_OUTPUT_STATUS
+    bool "custom output status widget"
+
+menuconfig CUSTOM_WIDGET_LAYER_STATUS
+    bool "custom layer status widget"
+
+menuconfig CUSTOM_WIDGET_PERIPHERAL_STATUS
+    bool "custom peripheral status widget"
+
+endif # SHIELD_CORNE_EPD_LEFT || SHIELD_CORNE_EPD_RIGHT

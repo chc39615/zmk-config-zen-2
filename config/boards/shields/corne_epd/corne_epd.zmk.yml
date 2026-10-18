@@ -1,0 +1,14 @@
+file_format: "1"
+id: corne_epd
+name: Corne ePaper (corne_epd)
+type: shield
+url: https://github.com/chc39615/zmk-config-zen-2
+requires: [pro_micro]
+features:
+  - keys
+  - display
+  - underglow
+  - studio
+siblings:
+  - corne_epd_left
+  - corne_epd_right
