@@ -18,10 +18,13 @@
     };
 };
 
+// Layer order matters: a higher layer wins. GAME sits below NUMBER/SYMBOL/FUNC
+// so their keys still work while GAME is toggled on (same as reviung41).
 #define DEFAULT 0
-#define NUMBER  1
-#define SYMBOL  2
-#define FUNC    3
+#define GAME    1
+#define NUMBER  2
+#define SYMBOL  3
+#define FUNC    4
 
 / {
     behaviors {
@@ -47,8 +50,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-
-
         default_layer {
             display-name = "COLMAK";
 
@@ -65,6 +66,25 @@
                           &mo NUMBER   &kp SPACE     &kp DEL    &kp BSPC  &kp RET       &mo SYMBOL
             >;
         
+        };
+
+        game_layer {
+            display-name = "GAME";
+
+            // -----------------------------------------------------------------------------------------
+            // | GAME |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | ESC  |
+            // | TAB  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | SHFT |
+            //                  |<NUMBER>| SPC | DEL |   | BSP | ENT |<SYMBOL>|
+            // GAME (top-left) toggles this layer off again. No home-row mods here.
+
+            bindings = <
+&tog GAME  &kp Q  &kp W  &kp E  &kp R      &kp T         &kp Y          &kp U      &kp I      &kp O    &kp P          &kp ESC
+&kp TAB    &kp A  &kp S  &kp D  &kp F      &kp G         &kp H          &kp J      &kp K      &kp L    &kp SEMICOLON  &kp SINGLE_QUOTE
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V      &kp B         &kp N          &kp M      &kp COMMA  &kp DOT  &kp SLASH      &kp RSHFT
+                         &mo NUMBER  &kp SPACE  &kp DELETE    &kp BACKSPACE  &kp ENTER  &mo SYMBOL
+            >;
+
         };
 
         number_layer {
@@ -112,7 +132,7 @@
             // |      |   VOL-     |  VOL+   | MUTE |      |         |   |     |     |     |     |     |       |
 
             bindings = <
-&tog 4  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
+&tog GAME  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
 &none   &none            &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD    &none         &none         &none         &none         &none         &bt BT_CLR
 &none   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &none  &none    &none         &none         &none         &none         &none         &none
                                     &trans      &none  &none    &none         &none         &trans
@@ -120,17 +140,5 @@
         
         };
 
-        game_layer {
-            display-name = "GAME";
-            label = "GAME";
-
-            bindings = <
-&tog 4     &kp Q  &kp W  &kp E  &kp R      &kp T         &kp Y          &kp U      &kp I      &kp O    &kp P          &kp ESC
-&kp TAB    &kp A  &kp S  &kp D  &kp F      &kp G         &kp H          &kp J      &kp K      &kp L    &kp SEMICOLON  &kp SINGLE_QUOTE
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V      &kp B         &kp N          &kp M      &kp COMMA  &kp DOT  &kp SLASH      &kp RSHFT
-                         &mo 1  &kp SPACE  &kp DELETE    &kp BACKSPACE  &kp ENTER  &mo 2
-            >;
-
-        };
     };
 };
