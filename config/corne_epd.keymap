@@ -72,14 +72,15 @@
             display-name = "GAME";
 
             // -----------------------------------------------------------------------------------------
-            // | GAME |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | ESC  |
+            // | GAME |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |<FUNC>|
             // | TAB  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | SHFT |
             //                  |<NUMBER>| SPC | DEL |   | BSP | ENT |<SYMBOL>|
             // GAME (top-left) toggles this layer off again. No home-row mods here.
+            // ESC is on NUMBER/SYMBOL (C position), so top-right opens FUNC like DEFAULT.
 
             bindings = <
-&tog GAME  &kp Q  &kp W  &kp E  &kp R      &kp T         &kp Y          &kp U      &kp I      &kp O    &kp P          &kp ESC
+&tog GAME  &kp Q  &kp W  &kp E  &kp R      &kp T         &kp Y          &kp U      &kp I      &kp O    &kp P          &mo FUNC
 &kp TAB    &kp A  &kp S  &kp D  &kp F      &kp G         &kp H          &kp J      &kp K      &kp L    &kp SEMICOLON  &kp SINGLE_QUOTE
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V      &kp B         &kp N          &kp M      &kp COMMA  &kp DOT  &kp SLASH      &kp RSHFT
                          &mo NUMBER  &kp SPACE  &kp DELETE    &kp BACKSPACE  &kp ENTER  &mo SYMBOL
