@@ -44,11 +44,11 @@
  *    (or a thumb). Pressing a key on the same hand while rolling = always a tap.
  *  - balanced: if another key is pressed AND released inside tapping-term -> hold.
  *  - require-prior-idle: if you were typing within the last 150 ms -> always a tap.
- *  - Same-hand combos (e.g. Ctrl(T)+C) still work: hold the mod past tapping-term first.
+ *  - Same-hand combos (e.g. Ctrl(T)+C) still work: hold the mod past tapping-term (200 ms) first.
  */
 #define HRM_COMMON                     \
     flavor = "balanced";               \
-    tapping-term-ms = <250>;           \
+    tapping-term-ms = <200>;           \
     quick-tap-ms = <175>;              \
     require-prior-idle-ms = <150>;     \
     hold-trigger-on-release;           \
